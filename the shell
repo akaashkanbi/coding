@@ -1,0 +1,242 @@
+shell is a program that takes commands from the keyboard and makes the operating system do them
+DOS file: a file made in the DOS operating system
+http://linuxcommand.org/lc3_lts0020.php
+
+    Blue: Directory
+
+    Green: Executable or recognized data file
+
+    Sky Blue: Linked file
+
+    Yellow with black background: Device
+
+    Pink: Graphic image file
+
+    Red: Archive file
+    
+    pip install <package> !type this in the interactive shell!!
+------------------------------------------lesson 1 +2--------------------------------------------------------
+GUI- graphical user interface----like settings 
+CLI- command line interface------like terminal
+mutually exclusive: cnnot occur at the same time
+
+unix has many shells: bash (Borne Again SHell), ksh, tcsh, zsh
+
+terminal? a program that lets you interact with the shell
+
+emulator: allows one computer system to behave like another
+
+superuser: means you have admin privaleges, if last character on shell prompt is # instead of $
+
+highlight text paste it to terminal by pressing middle button on mouse or left and right buttons on touch pad
+
+root directory= the first directory, contained within in are subdirectories and files, represented by a /
+working directory= the directory you are currently in
+
+home directory= directory you are in when you first log in
+
+going back to your parent directory: cd ..
+single . means the working directory 
+
+absolute pathname: to change directories using absolute pathnames, only add / at the start if you are in the root directory
+
+changing to the home directory: cd 
+
+change to the working directory you were previously on: cd -
+
+ls -a will show all hidden directories and files too. hidden files or directories have a . preceeding their name
+
+when naming files, limit puntuation to -._ no spaces
+
+---------------------------------------------lesson 3----------------------------------------------------------------
+structure of commands: command -options arguements 
+command is stuff like ls, options are the extra optional shit you can do with the command, arguement is the other stuff you 
+want the command to operate on 
+
+listing files in long format: ls -l
+listing files in a certain directory: ls <directory>
+listing hidden files and normal files and directories in long format: ls -la (can be -al too, order doesnt matter)
+
+long format: - indicates file, d indicates directory. the next set of character indicates the permissions (read write etc)
+next is the person who owns the file, then the group of people who also have access to the file/directory, then its the 
+size of the file in bytes, modification date, and file name at the end
+
+displaying a text file: less <textfile, no extension needed>,  to quit, press q
+you can scroll through the pages using up and down arrows
+go to the end of the file: g
+go to the start of the file: 1g
+to find a word, type /<word>
+to see a complete list of shit you can do in less, type h
+
+to see what kind a file something is: type file <file name> !you must be in the same directory to do this
+---------------------------------lesson4--------------------------------------------------
+
+mounting: when you attach a physical device to the tree of directories. devices are treated like files
+mount points: are points in the directory tree where devices are mounted
+
+------------------------------------lesson 5----------------------------------------------
+manipulating files
+
+wildcards: 
+
+i*.dat   specifies any files that begin with i and end with .dat in the current working directory
+
+big??     specifies any files that begin with the word big followed by 2 characters
+
+[abq]*  specifies any files that begin with a, b or q
+
+[[:alnum:]]* specifies any files that start with alpha numeric characters  
+
+[[:digit:]]*    "       "    "     "    "    "    number characters
+
+[[:alpha:]]*   "       "    "     "    "    "    alphabetic characters
+
+[!abq]*        "       "    "     "   dont start with a b or q
+
+[[:upper:]]* for upper case letters
+
+[[:lower:]] for lower case letters
+-------------------------------
+copies the first declared file or directory, and pastes it into the second declared file or directory: cp 
+(add -r for directories)
+fore files, this command overwrites the old file (second declared one) and just sticks the new stuff in
+if the 2nd declared file or directory doesnt exist, then it makes it
+for directories, it does NOT overwrite the directory
+
+can copy a file into a directory
+
+when using cp, file and directory must be in the same directory
+
+interactive option: -i, basically notifies you that you will be overwriting something, but doesnt allow for the option of 
+not overwriting
+--------------------------
+moving or renaming files or directories: mv
+if you have in your arguments 2 files, the first declared file is renamed to the second. if the second file name is  file 
+that already exists, then its contents are replaced with that of the first declared file, and the 1st declared file no 
+longer exists.
+
+for directories: if you have 2 directories, mv will move dir1 to dir2 if dir2 does not exist
+error message will come up if dir1 doesnt exist
+
+
+use of mv in moving files into directories: can move multiple files into a directory all in the same line
+mv file1 file2 file3 dir1
+--------------------------
+removing files or directories: rm
+--------------------------
+creating directories: mkdir
+
+----------------------------------------lesson 6--------------------------------------------------
+different types of commands:
+
+executable programs: programs written in a language that does shit when you run them
+shell builtins: built in commands within bash that allows you to do shit like cd
+alias: commands you can make yourself to do stuff 
+shell functions: not sure, add details later 
+
+finding out the type of command something is: type <enter command here>
+
+which command: supposed to tell you the location of an executable, but when I tried it, nothing happens 
+
+finding out more information about a certain shell builtin: help <command name> 
+example---> help cd. !any verticle lines | means these two options are mutually exclusive 
+
+finding out more information about a certain executable program: <command name> --help 
+doesnt work for all executable programs
+
+an alternative for executable programs is: man <command>
+
+if you find a .gz file, it means its compressed using gzip program, and to view it, use zless instea of less
+
+----------------------------------------lesson 7------------------------------------------------------
+
+standard input/output: input/output from the keyboard/terminal respectively
+
+how to change the output of a command to write into a file: <command> > file.dat
+example: ls > file.dat !this will print out the list of files and directories onto the file "file.dat" but will overwrite
+each time 
+to get rid of the overwrite behaviour: replace > with >>
+(memonic: command OUTput > because it points outwards, command INput < because it points inwards)
+
+ordering lines in alphabetical order (numbers occupy first line): sort !can use this for sorting files too
+
+listing files in alphabetical order: ls -t
+
+printing the first 10 lines of a file: head <filename>
+
+pipelines: allow you to make the standard output of a command the standard input of the subsequent command seperated by a
+pipeline i.e ls -l | less !this makes a list in long form of all things in the directory and outputs them into a less format
+
+
+show all directories (even those inside other directories within the working directory) and how much space they consume: du <directory name>
+can omit the directory name, and the command will just work on the working directory
+
+editing files: nano <filename> !to save file, crtl + O + enter, to exit, ctrl + X
+
+sorting things from largest to smallest: sort -nr
+
+how to examine a file, look for a pattern of characters, and print the lines which contain them: grep <pattern> <file.dat>
+
+how to create a file on terminal and edit it on standard output: cat > file.dat !press ctrl D to save the file
+
+how to clear a file: fmt <filename>
+
+tarfiles: see end of page lesson 7
+
+-----------------------------------------------lesson 8------------------------------------------
+expansion: anything you type in the terminal is expanded before the shell reads it, and so can do different shit depending
+on what commands youved typed in conjunction
+
+echo command: prints the argument as standard output,
+also can be used with wildcards and * to print files as standard ouput
+when using * w/ echo, * can be thought of as something thats missing which you want to find
+
+finding directories: /*/*, or /home/akaash/* will print all directories with a pathname /home/akaash/something else
+need to have the / at the beginning 
+
+the ~: expands into the home directory i.e echo ~/documents gives akaash/home/documents
+if you want the home directory of another user, then use echo ~<username> i.e echo ~milan
+
+using the terminal as a CALCULATOR: echo $((expression)) !i.e echo $((2+2)), you need the echo because this is an expansion
+can also do $(((5*3)+2)) as long as there are two brackets at the beginning and the end. ONLY INTEGERS, division will always
+result in rounding 
+
+OPERATIONS: +/*-% (% is modulo, 5%2 is the remainder of 5/2)
+
+BRACE EXPANSION: echo preamble{1,2,3}postscript !results in preamble1postscript preambl2postscript preamble3postscript
+!behaves similarly to bracket expansion
+
+variables= chunks of data, referred to as env. to print all variables, printenv
+
+finding lines within a directory:
+grep -r "../../.." <pathname of directory>
+
+.. also means continue to i.e mkdir {2007..2009} makes directories 2007 2008 2009
+
+type <filename> tells you where the excutable/program is located, use this to add executables to your path
+
+double quotes "" anything inside these are treated as strings except $ expansions, \, and ` (back quotes, underneath esc)
+this can be used to deal with files with a space inside it ex. ls -l "file name.dat" will not separate into two agruments 
+
+Single quotes means that all expansions are ignored, including $ \ `
+
+ESCAPE CHARACTER: to just ignore the expansion of a single term, prefix it with a \ i.e echo "i hate life, give me \$100 dollar" 
+note this cannot be used inside single quotes ------------useful in renaming terribly named files
+
+$USER=outputs user name 
+
+$(cal) ouputs a calander of this month put in double quotes and you get it printed nicely on the screen
+
+echo can be used to show you what a character represents i.e. echo ~ spits out the home directory's pathname
+
+to get the \ to appear in a filename or argument, type it twice \\
+
+to print a directory in reverse: ls -r
+
+How to make the terminal go "beep" ---echo -e "\a" !-e allows escape characters to be used, \a makes the beep sound
+\n makes a new line, but you must enable escapes by using -e
+
+---------------------------------------------lesson 9:permissions----------------------------
+
+
+
