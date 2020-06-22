@@ -1,0 +1,36 @@
+import pandas as pd
+
+dataframe (is referred to in python as df): like the table of data. consists of index(like rows) with index label 
+(can be row number), columns with column label,and values (data)
+
+row or column are often refered to as an axis
+
+subset selection (also called indexing): when you select particular rows and/or columns within the dataframe
+
+integer location: the number assigned to an partiular row or column. starts from 0, goes to n-1
+
+indexers: commands that help you index/subset select. they are [], .iloc, .loc
+BUT df[] is also called the indexing operator
+
+COMMAND read_csv('sample_data.csv', index_col=0): reads in a comman seperated data set called sample_data.csv, and 
+focuses on the column n=0
+ensure arugments within read_csv are .csv files, 
+you can convert them by using the following command:
+
+import pandas as pd
+df = pd.read_csv("Demo.txt",delimiter='<input whatever is used to seperate the data values from one another>')
+df.to_csv('Demo1.csv')
+
+viewing just the top three rows of the data : print(df.head(3))
+
+to look for certain bits of data: 
+import numpy as np
+import pandas as pd
+
+df=pd.read_csv("dinner.csv")
+
+is_t_4_05= df['label_3']==4.05 #defines t_4_05 as column 3 where the row elements are equal to 4.05
+
+df_4_05=df[is_t_4_05] #sets the df_4_05 to equal to what we defined above
+
+this will allow you to look at only the data where in column 3, the row elements have values 4.05
