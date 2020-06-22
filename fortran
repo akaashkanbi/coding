@@ -1,0 +1,14 @@
+ using open(10, file"filename") !important notes: 10 is the unit this file is assigned, file must have enclosed in double quotes
+ write(6,*) !6 means terminal, * means no specific format, let the computer choose
+ anything opened must be closed: close(unit)
+ read(5,*) means read from the keyboard (5)
+ 
+ * here can be replaced by f (real number) i(integer), a(strings, think abc), e(scientifc notation) which formats
+ you chose any of these depending on what your outputting/inputting.
+ 
+ ex: f6.2 means format the real number, allocating 6 characters, 2 of which assigned to after the decimal point
+ dont need . when you formating strings
+ 
+ character(len=5)::myword= "m" !for strings, can be user defined or defined in the declaration. declare number of characters 
+ needed, if you let length =5 but myword ="123456", it will only remember 12345. need double quotes.
+ 
