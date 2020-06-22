@@ -48,6 +48,8 @@ ls -a will show all hidden directories and files too. hidden files or directorie
 
 when naming files, limit puntuation to -._ no spaces
 
+group: people with common security, privilege and access purposes
+
 ---------------------------------------------lesson 3----------------------------------------------------------------
 structure of commands: command -options arguements 
 command is stuff like ls, options are the extra optional shit you can do with the command, arguement is the other stuff you 
@@ -238,5 +240,20 @@ How to make the terminal go "beep" ---echo -e "\a" !-e allows escape characters 
 
 ---------------------------------------------lesson 9:permissions----------------------------
 
+permissons: ls -l gives: drwxr-xr-x should be read like this---> - rwx r-x r-x  read write eXecute for the file owner, 
+read, no write, execute for the group you are part of
+read, no write, execute for everyone else. - means false
+if a - is at the beginning, then that means its a file not a directory
 
+binary: 111 = 7, each number can be either 1 or 0, read the binary from right to left, it goes 1248...doubling each time
 
+file permissions-----------
+using chmod: changes file permissions, option needs to be in binary i.e chmod 600 <some_file> meanss 110 for the file owner,
+and not permission to do anything for anyone else (hence the 00) 6 represents the actions of the file owner.
+------------------------
+directory permissions------------
+same chmod 600 bs but rwx means different things: r means allow the directory to be seen if its allowed to be entered
+w means allow the directory to have its files tampered with, provided "x" is present (same condition as above)
+x means allow the directory to be entered
+
+got up to superusers, su
