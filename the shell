@@ -177,7 +177,7 @@ editing files: nano <filename> !to save file, crtl + O + enter, to exit, ctrl + 
 
 sorting things from largest to smallest: sort -nr
 
-how to examine a file, look for a pattern of characters, and print the lines which contain them: grep <pattern> <file.dat>
+how to examine a file, look for a pattern of characters, and print the lines which contain them: grep <pattern> <file or input>
 
 how to create a file on terminal and edit it on standard output: cat > file.dat !press ctrl D to save the file
 
@@ -256,4 +256,17 @@ same chmod 600 bs but rwx means different things: r means allow the directory to
 w means allow the directory to have its files tampered with, provided "x" is present (same condition as above)
 x means allow the directory to be entered
 
-got up to superusers, su
+changing file ownership: sudo chown <new owner> <file name> !works the same way for directories
+
+changing group ownership: sudo chgrp <new group> <file name> 1"     "   "    "   "    "
+must be file/directory owner to do any of this ch shit
+
+--------------------------------------------lesson 10: job controls-------------------------------
+putting programs in the background: <command that opens a program> & !examples are gedit & or xload &, xload is a program that shows the systems load
+
+if you forget to put the &, use ctrl Z to make it idle, the write bg on the command line and hit enter to put it in the background
+
+listing the processes currently running: ps x !PID means processing id, needed to kill processes, x means all process even those not opened by terminal
+killing processes: kill <processing id>
+
+
