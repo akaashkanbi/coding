@@ -12,10 +12,10 @@ integer location: the number assigned to an partiular row or column. starts from
 indexers: commands that help you index/subset select. they are [], .iloc, .loc
 BUT df[] is also called the indexing operator
 
-COMMAND read_csv('sample_data.csv', index_col=0): reads in a comman seperated data set called sample_data.csv, and 
+COMMAND pd.read_csv('sample_data.csv', index_col=0): reads in a comman seperated data set called sample_data.csv, and 
 focuses on the column n=0
-ensure arugments within read_csv are .csv files, 
-you can convert them by using the following command:
+
+you can convert files to .csv by using the following command:
 
 import pandas as pd
 df = pd.read_csv("Demo.txt",delimiter='<input whatever is used to seperate the data values from one another>')
