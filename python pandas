@@ -34,3 +34,9 @@ is_t_4_05= df['label_3']==4.05 #defines t_4_05 as column 3 where the row element
 df_4_05=df[is_t_4_05] #sets the df_4_05 to equal to what we defined above
 
 this will allow you to look at only the data where in column 3, the row elements have values 4.05
+
+
+slicing dataframes-------------------------
+lets say density is some column of a larger data file init3d_t0100.dat and we want rows 0-10
+density=df.iloc[:,[4]]
+density_slice=density[0:10]
