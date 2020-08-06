@@ -1,5 +1,8 @@
 import pandas as pd
 
+NOTE:DONT USE df.loc["column name"] its stupid and doesnt work 
+
+
 dataframe (is referred to in python as df): like the table of data. consists of index(like rows) with index label 
 (can be row number), columns with column label,and values (data)
 
