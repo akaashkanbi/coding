@@ -49,3 +49,10 @@ df.columns=['l1', 'l2', 'l3', 'l4', 'l5', 'l6', 'l7', 'l8', 'l9', 'l10', 'l11', 
 
 removing columns-------------------------
 del df['column name']
+
+
+---------------------------------------dimensional reduction-------------------------------------
+from sklearn.datasets import make_classification
+make_classification(n_samples=1000, n_features=20, n_informative=10, n_redundant=10, random_state=7)
+ #this command makes up a random data set with seed 7, 10 redundant columns, 10 useful columns, 20 columns (or dimensions) in total, and 1000 data points
+ 
