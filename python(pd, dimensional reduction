@@ -3,6 +3,11 @@ import pandas as pd
 NOTE:DONT USE df.loc["column name"] its stupid and doesnt work 
 
 
+
+loading in files that have no headers-------------------------------------
+df=pd.read_csv("init1d_t0100.dat", delimiter=" ",header=None) #do this otherwise the first line of the file is ignored
+
+
 dataframe (is referred to in python as df): like the table of data. consists of index(like rows) with index label 
 (can be row number), columns with column label,and values (data)
 
@@ -61,3 +66,4 @@ make_classification(n_samples=1000, n_features=20, n_informative=10, n_redundant
  
 making n dimensional array based on n arrays------------------------
 data_comp=np.stack((he,c,ne,mg,si,s,ar,ca,ti,cr,fe,ni), axis=0, out=None).T
+
