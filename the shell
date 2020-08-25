@@ -269,4 +269,8 @@ if you forget to put the &, use ctrl Z to make it idle, the write bg on the comm
 listing the processes currently running: ps x !PID means processing id, needed to kill processes, x means all process even those not opened by terminal
 killing processes: kill <processing id>
 
+transfering files from your computer to remote server:
+scp -r /home/akaash/documents/mphys/d6/relaxation_files/ ac01283@access.eps.surrey.ac.uk:/vol/ph/astro_code/aconhye
+
+
 
