@@ -272,5 +272,7 @@ killing processes: kill <processing id>
 transfering files from your computer to remote server:
 scp -r /home/akaash/documents/mphys/d6/relaxation_files/ ac01283@access.eps.surrey.ac.uk:/vol/ph/astro_code/aconhye
 
+df -h /dev/sda9 !!this lets you look at how much space you have. memory available, size.
+
 
 
