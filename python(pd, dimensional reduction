@@ -67,3 +67,10 @@ make_classification(n_samples=1000, n_features=20, n_informative=10, n_redundant
 making n dimensional array based on n arrays------------------------
 data_comp=np.stack((he,c,ne,mg,si,s,ar,ca,ti,cr,fe,ni), axis=0, out=None).T
 
+
+DELETING COLUMNS WITH NUMPY===================================================
+
+numpy.delete(arr, obj, axis=None)
+arr is the array name 
+obj is the row or column number 
+axis=0,1 #0 if you want to delete a row, 1 if you want to delete a column
