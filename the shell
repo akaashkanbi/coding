@@ -274,5 +274,25 @@ scp -r /home/akaash/documents/mphys/d6/relaxation_files/ ac01283@access.eps.surr
 
 df -h /dev/sda9 !!this lets you look at how much space you have. memory available, size.
 
+WRITING SHELL SCRIPTS!
+
+lesson 1
+#!/bin/bash ----this tells the shell what language you are coding in
+
+# comments
+
+lesson 2
+alias new=value #alias is just a way of shorting a command, which we call value. the new command is we called new
+example:
+alias l=ls -l #from now on, typing l results in the ls -l command being shown 
+
+environment: a set of facts like our paths, and our username etc. YOU CAN SEE WHATS IN THE ENVIRONMENT BY TYPING SET
+
+functions need a () i.e function()
+
+
+
+
+
 
 
